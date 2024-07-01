@@ -23,5 +23,22 @@
   "500": {
     "title": "System Error",
     "description": "Description about system error"
+  },
+  "AttendanceSystem": {
+    "no_image_alt": "No image available",
+    "employee_info": "{{name}} - {{role}}",
+    "current_date": "{{date}}",
+    "current_time": "{{time}}",
+    "check_in": "Check in",
+    "checked_out": "Checked out"
+  },
+  "Button": {
+    "check_in": "Check in",
+    "checked_out": "Checked out"
+  },
+  "Modal": {
+    "close": "Close",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   }
 }

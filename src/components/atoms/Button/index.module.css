@@ -48,6 +48,18 @@
     background: transparent;
     box-shadow: none;
   }
+
+  .attendanceCheckIn {
+    background-color: rgba(61, 84, 249, 1);
+    border-radius: 8px;
+    width: 112px;
+    height: 40px;
+    font-weight: 500;
+  }
+
+  .attendanceCheckedOut {
+    background-color: rgba(168, 168, 168, 1);
+  }
 }
 
 .primary:hover,

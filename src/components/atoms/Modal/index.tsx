@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactModal from 'react-modal'
+import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 
 import styles from './index.module.css'
@@ -42,7 +43,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
   componentWillUnmount() {
     instanceModalComponent = null
   }
-
+  
   clearModal = (hideId?: string) => {
     if (!hideId) {
       return
@@ -55,6 +56,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
         }
         return modal.id !== hideId
       })
+    
       return {
         ...state,
         modals,
@@ -68,6 +70,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
     let newModals = modals
     if (id) {
       newModals = modals.map((modal) => {
+        
         if (modal.id === id) {
           return { ...modal, visible: false }
         }
@@ -80,6 +83,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
     this.setState({
       modals: [...newModals],
     })
+    
   }
 
   // eslint-disable-next-line react/no-unused-class-component-methods
@@ -87,6 +91,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
     const { modals } = this.state
     const modalId = `${Date.now()}`
     this.setState({
+      
       modals: [...modals, { component, options, visible: true, id: modalId }],
     })
     return modalId
@@ -94,7 +99,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
 
   render() {
     const { modals } = this.state
-
+    
     return (
       <>
         {modals.map((modal) => {
@@ -102,6 +107,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
           return (
             <ReactModal
               key={modal.id}
+              
               overlayClassName={styles.Overlay}
               className={clsx(styles.Modal, {
                 [styles.ModalTop]: modalPosition === ModalPositionEnum.TOP,
@@ -112,6 +118,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
               isOpen={modal?.visible}
               onRequestClose={() => this.hide(modal.id)}
               onAfterClose={() => this.clearModal(modal.id)}
+              
               style={{
                 overlay: {
                   ...modal.options.style?.overlay,
@@ -119,6 +126,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
                 content: {
                   ...modal.options.style?.content,
                 },
+                
               }}
               {...modal.options}
             >
