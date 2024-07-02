@@ -23,5 +23,17 @@
   "500": {
     "title": "System Error",
     "description": "Description about system error"
+  },
+  "AttendanceSystem": {
+    "logo_alt": "Company Logo",
+    "user_info": "{{name}} - {{role}}",
+    "calendar_icon_alt": "Calendar Icon",
+    "current_date": "{{date}}",
+    "check_in": "Check in",
+    "checked_out": "Checked out"
+  },
+  "button": {
+    "checkIn": "Check in",
+    "checkedOut": "Checked out"
   }
 }

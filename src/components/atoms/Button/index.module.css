@@ -77,6 +77,22 @@
   background: #fff;
 }
 
+.checkIn {
+  background-color: rgba(61, 84, 249, 1);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  width: 112px;
+  height: 40px;
+}
+
+.checkedOut {
+  background-color: rgba(168, 168, 168, 1);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  width: 112px;
+  height: 40px;
+}
+
 .link:hover,
 .link:focus {
   color: #40a9ff;
