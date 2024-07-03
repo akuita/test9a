@@ -1,0 +1,12 @@
+.navigationBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigationItem {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  cursor: pointer;
+}

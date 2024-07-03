@@ -23,5 +23,26 @@
   "500": {
     "title": "System Error",
     "description": "Description about system error"
+  },
+  "shared_components": {
+    "iconButton": {
+      "altText": "Icon button"
+    },
+    "textWithIcon": {
+      "altText": "Icon with text"
+    },
+    "navigationBar": {
+      "logout": "Logout"
+    }
+  },
+  "attendanceSystem": {
+    "title": "Attendance System",
+    "timeTracking": "Time tracking",
+    "timeSheet": "Time sheet",
+    "userInfo": "Jack Daniel - Developer",
+    "currentDate": "Wednesday, 27 September, 2023",
+    "currentTime": "08:30:20",
+    "checkIn": "Check in",
+    "checkedOut": "Checked out"
   }
 }
