@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'next-i18next'
-import Button from '@components/atoms/Button'
+import { Button } from '@components/atoms/Button'
 import styles from './index.module.css'
 
 const AttendanceSystem = () => {

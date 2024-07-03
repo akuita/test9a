@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactModal from 'react-modal'
+import PropTypes from 'prop-types'
 import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 
@@ -20,6 +21,7 @@ export interface ModalOptions extends Omit<ReactModal.Props, 'isOpen'> {
 }
 export type ModalProps = {
   local?: boolean
+  style?: React.CSSProperties
 }
 type ModalState = {
   modals: {
@@ -95,6 +97,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
   }
 
   render() {
+    const { style, ...restProps } = this.props
     const { modals } = this.state
 
     return ( // Use t function to translate modal content if needed
@@ -142,5 +145,12 @@ export const Modal = {
   },
   hide(id?: string) {
     instanceModalComponent?.hide(id)
+  },
+  propTypes: {
+    style: PropTypes.object,
+    // ... define other prop types if needed
+  },
+  defaultProps: {
+    style: {},
   },
 }

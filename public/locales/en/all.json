@@ -42,5 +42,13 @@
   },
   "Modal": {
     "close": "Close"
+  },
+  "AttendanceSystemPage": {
+    "calendar_icon_alt": "Calendar Icon",
+    "employee_info": "Jack Daniel - Developer",
+    "current_date": "Wednesday, 27 September, 2023",
+    "current_time": "08:30:20",
+    "check_in_button": "Check in",
+    "checked_out_button": "Checked out"
   }
 }

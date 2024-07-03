@@ -1,6 +1,7 @@
 @layer button {
  .rounded {
-   border-radius: 8px;
+   /* Allow overriding border-radius */
+   border-radius: var(--button-border-radius, 8px);
  }
 
   .link_tag {
@@ -15,9 +16,8 @@
   .button {
     border: 1px solid transparent;
     color: rgba(0, 0, 0, 0.85);
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
-    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-    padding: 4px 15px;
+    /* Allow overriding padding */
+    padding: var(--button-padding, 4px 15px);
     cursor: pointer;
     line-height: 1.5715;
     display: block;
