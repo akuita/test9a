@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
 import clsx from 'clsx'
 import { useTranslation } from 'next-i18next'
-
 import styles from './index.module.css'
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

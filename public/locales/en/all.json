@@ -26,28 +26,30 @@
   },
   "AttendanceSystem": {
     "user_icon": "User Icon",
-    "user_info": "{{name}} - {{role}}",
+    "jack_daniel_developer": "Jack Daniel - Developer",
     "calendar_icon": "Calendar Icon",
-    "date": "{{date}}",
+    "wednesday_27_september_2023": "Wednesday, 27 September, 2023",
     "check_in": "Check in",
     "checked_out": "Checked out"
   },
-  "Button": {
-    "default": "Default Button",
-    "primary": "Primary Button",
-    "ghost": "Ghost Button",
-    "dashed": "Dashed Button",
-    "link": "Link Button",
-    "text": "Text Button"
-  },
-  "Modal": {
-    "close": "Close",
-    "save": "Save",
-    "cancel": "Cancel"
-  },
-  "Toast": {
-    "success": "Success!",
-    "error": "Error!",
-    "info": "Info"
+  "shared_components": {
+    "Button": {
+      "link_to": "Link to",
+      "button_type": {
+        "link": "Link",
+        "text": "Text",
+        "ghost": "Ghost",
+        "default": "Default",
+        "primary": "Primary",
+        "dashed": "Dashed"
+      }
+    },
+    "Modal": {
+      "modal_position": {
+        "default": "Default",
+        "top": "Top",
+        "center": "Center"
+      }
+    }
   }
 }

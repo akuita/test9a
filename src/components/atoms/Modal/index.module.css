@@ -1,8 +1,6 @@
 .Overlay {
-  background-color: rgba(29, 37, 49, 0.7);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: rgba(29, 37, 49, 0.7);
   bottom: 0;
   left: 0;
   position: fixed;
@@ -25,6 +23,15 @@
   transition: all 0.5s ease-in-out;
 }
 
+.ModalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 21px rgba(220, 220, 220, 0.25);
+}
 .ModalTop {
   top: 0px;
 }

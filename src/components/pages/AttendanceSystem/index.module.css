@@ -27,17 +27,17 @@
   padding-bottom: 12px;
 }
 
-.userBar img {
+.userIcon {
   width: 16px;
   height: 16px;
-  margin-right: 4px;
 }
 
-.userBar span {
+.userName {
   color: rgba(168, 168, 168, 1);
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
+  margin-left: 4px;
 }
 
 .content {
@@ -55,26 +55,26 @@
   gap: 8px;
 }
 
-.dateInfo img {
+.calendarIcon {
   width: 16px;
   height: 16px;
 }
 
-.dateInfo span {
+.dateText {
   color: rgba(51, 51, 51, 1);
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
 }
 
-.time {
+.timeText {
   color: rgba(51, 51, 51, 1);
   font-weight: 500;
   font-size: 60px;
   line-height: 72px;
 }
 
-.buttons {
+.buttonGroup {
   display: flex;
   gap: 8px;
 }
@@ -91,7 +91,7 @@
   height: 40px;
 }
 
-.checkOutButton {
+.checkedOutButton {
   background-color: rgba(168, 168, 168, 1);
   border-radius: 8px;
   color: rgba(255, 255, 255, 1);

@@ -9,6 +9,7 @@ let instanceModalComponent: ModalComponent | null = null
 const DEFAULT_STATES = {
   modals: [],
 }
+
 export enum ModalPositionEnum {
   DEFAULT = 'default',
   TOP = 'top',
@@ -28,6 +29,7 @@ type ModalState = {
     id: string
   }[]
 }
+
 export class ModalComponent extends React.PureComponent<ModalProps, ModalState> {
   constructor(props: ModalProps) {
     super(props)
@@ -37,7 +39,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
   componentDidMount() {
     instanceModalComponent = this
   }
-  
+
   componentWillUnmount() {
     instanceModalComponent = null
   }
