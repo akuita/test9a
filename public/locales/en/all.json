@@ -25,15 +25,15 @@
     "description": "Description about system error"
   },
   "AttendanceSystem": {
+    "user_icon": "User Icon",
+    "user_info": "{{name}} - {{role}}",
     "calendar_icon": "Calendar Icon",
-    "employee_info": "{{name}} - {{role}}",
-    "current_date": "{{date}}",
-    "current_time": "{{time}}",
+    "date": "{{date}}",
     "check_in": "Check in",
     "checked_out": "Checked out"
   },
   "Button": {
-    "link_tag": "Link",
+    "default": "Default Button",
     "primary": "Primary Button",
     "ghost": "Ghost Button",
     "dashed": "Dashed Button",
@@ -41,14 +41,13 @@
     "text": "Text Button"
   },
   "Modal": {
-    "close": "Close"
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel"
   },
-  "AttendanceSystemPage": {
-    "calendar_icon_alt": "Calendar Icon",
-    "employee_info": "Jack Daniel - Developer",
-    "current_date": "Wednesday, 27 September, 2023",
-    "current_time": "08:30:20",
-    "check_in_button": "Check in",
-    "checked_out_button": "Checked out"
+  "Toast": {
+    "success": "Success!",
+    "error": "Error!",
+    "info": "Info"
   }
 }

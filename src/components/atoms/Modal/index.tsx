@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactModal from 'react-modal'
-import PropTypes from 'prop-types'
 import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 
@@ -10,7 +9,6 @@ let instanceModalComponent: ModalComponent | null = null
 const DEFAULT_STATES = {
   modals: [],
 }
-
 export enum ModalPositionEnum {
   DEFAULT = 'default',
   TOP = 'top',
@@ -21,7 +19,6 @@ export interface ModalOptions extends Omit<ReactModal.Props, 'isOpen'> {
 }
 export type ModalProps = {
   local?: boolean
-  style?: React.CSSProperties
 }
 type ModalState = {
   modals: {
@@ -31,20 +28,16 @@ type ModalState = {
     id: string
   }[]
 }
-
 export class ModalComponent extends React.PureComponent<ModalProps, ModalState> {
-  private t: ReturnType<typeof useTranslation>['t']
-
   constructor(props: ModalProps) {
     super(props)
-    this.t = useTranslation().t
     this.state = DEFAULT_STATES
   }
 
   componentDidMount() {
     instanceModalComponent = this
   }
-
+  
   componentWillUnmount() {
     instanceModalComponent = null
   }
@@ -68,6 +61,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
     })
   }
 
+  // eslint-disable-next-line react/no-unused-class-component-methods
   hide = (id?: string) => {
     const { modals } = this.state
     let newModals = modals
@@ -87,6 +81,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
     })
   }
 
+  // eslint-disable-next-line react/no-unused-class-component-methods
   show = (component: React.ReactNode, options: ModalOptions) => {
     const { modals } = this.state
     const modalId = `${Date.now()}`
@@ -97,10 +92,9 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
   }
 
   render() {
-    const { style, ...restProps } = this.props
     const { modals } = this.state
 
-    return ( // Use t function to translate modal content if needed
+    return (
       <>
         {modals.map((modal) => {
           const modalPosition = modal.options.position || ModalPositionEnum.DEFAULT
@@ -118,19 +112,16 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
               onRequestClose={() => this.hide(modal.id)}
               onAfterClose={() => this.clearModal(modal.id)}
               style={{
-                overlay: { // Center the modal content using flexbox
+                overlay: {
                   ...modal.options.style?.overlay,
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
                 },
                 content: {
                   ...modal.options.style?.content,
-                }, // Translate modal content if it's a string
+                },
               }}
               {...modal.options}
             >
-              {typeof modal.component === 'string' ? this.t(modal.component) : modal.component}
+              {modal.component}
             </ReactModal>
           )
         })}
@@ -145,12 +136,5 @@ export const Modal = {
   },
   hide(id?: string) {
     instanceModalComponent?.hide(id)
-  },
-  propTypes: {
-    style: PropTypes.object,
-    // ... define other prop types if needed
-  },
-  defaultProps: {
-    style: {},
   },
 }
