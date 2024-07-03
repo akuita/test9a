@@ -1,18 +1,13 @@
 import { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import AttendanceSystemPage from '@components/pages/AttendanceSystem'
+import AttendanceSystem from '@components/pages/AttendanceSystem'
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { locale = 'en' } = context
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['all'])),
-      seo: {
-        title: 'Attendance System',
-        description: 'Track your attendance with ease',
-      },
+      ...(await serverSideTranslations(locale, ['common', 'AttendanceSystem'])),
     },
   }
 }
 
-export default AttendanceSystemPage
+export default AttendanceSystem

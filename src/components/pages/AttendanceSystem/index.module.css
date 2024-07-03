@@ -7,10 +7,10 @@
   align-items: center;
 }
 
-.card {
+.cardContainer {
   background-color: rgba(255, 255, 255, 1);
   border-radius: 16px;
-  box-shadow: 0 4px 21px rgba(220, 220, 220, 0.25);
+  box-shadow: rgba(220, 220, 220, 0.25) 0px 4px 21px;
   width: 500px;
   height: 300px;
   display: flex;
@@ -19,64 +19,86 @@
 
 .header {
   background-color: rgba(231, 231, 231, 1);
-  padding: 12px 0;
-  text-align: center;
+  width: 100%;
+  height: 40px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 12px;
 }
 
-.logo {
-  vertical-align: middle;
+.header img {
   width: 16px;
   height: 16px;
+  margin-right: 4px;
 }
 
-.userName {
+.header span {
   color: rgba(168, 168, 168, 1);
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  margin-left: 4px;
 }
 
 .content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 13px;
 }
 
 .dateInfo {
-  margin-bottom: 13px;
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
-.calendarIcon {
-  vertical-align: middle;
+.dateInfo img {
   width: 16px;
   height: 16px;
 }
 
-.dateText {
+.dateInfo span {
   color: rgba(51, 51, 51, 1);
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  margin-left: 8px;
 }
 
-.timeText {
+.timeDisplay {
   color: rgba(51, 51, 51, 1);
   font-weight: 500;
   font-size: 60px;
   line-height: 72px;
 }
 
-.buttons {
+.buttonGroup {
   display: flex;
-  gap: 24px;
-  margin-top: 13px;
+  gap: 8px;
+}
+
+.checkInButton {
+  background-color: rgba(61, 84, 249, 1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  width: 112px;
+  height: 40px;
+}
+
+.checkedOutButton {
+  background-color: rgba(168, 168, 168, 1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  width: 112px;
+  height: 40px;
 }

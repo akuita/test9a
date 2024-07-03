@@ -1,5 +1,8 @@
 .Overlay {
   background-color: rgba(29, 37, 49, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   bottom: 0;
   left: 0;
   position: fixed;

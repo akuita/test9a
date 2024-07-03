@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactModal from 'react-modal'
+import { useTranslation } from 'next-i18next'
 import clsx from 'clsx'
 
 import styles from './index.module.css'
@@ -30,8 +31,11 @@ type ModalState = {
 }
 
 export class ModalComponent extends React.PureComponent<ModalProps, ModalState> {
+  private t: ReturnType<typeof useTranslation>['t']
+
   constructor(props: ModalProps) {
     super(props)
+    this.t = useTranslation().t
     this.state = DEFAULT_STATES
   }
 
@@ -62,7 +66,6 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
     })
   }
 
-  // eslint-disable-next-line react/no-unused-class-component-methods
   hide = (id?: string) => {
     const { modals } = this.state
     let newModals = modals
@@ -82,7 +85,6 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
     })
   }
 
-  // eslint-disable-next-line react/no-unused-class-component-methods
   show = (component: React.ReactNode, options: ModalOptions) => {
     const { modals } = this.state
     const modalId = `${Date.now()}`
@@ -95,7 +97,7 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
   render() {
     const { modals } = this.state
 
-    return (
+    return ( // Use t function to translate modal content if needed
       <>
         {modals.map((modal) => {
           const modalPosition = modal.options.position || ModalPositionEnum.DEFAULT
@@ -113,16 +115,19 @@ export class ModalComponent extends React.PureComponent<ModalProps, ModalState> 
               onRequestClose={() => this.hide(modal.id)}
               onAfterClose={() => this.clearModal(modal.id)}
               style={{
-                overlay: {
+                overlay: { // Center the modal content using flexbox
                   ...modal.options.style?.overlay,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
                 },
                 content: {
                   ...modal.options.style?.content,
-                },
+                }, // Translate modal content if it's a string
               }}
               {...modal.options}
             >
-              {modal.component}
+              {typeof modal.component === 'string' ? this.t(modal.component) : modal.component}
             </ReactModal>
           )
         })}
